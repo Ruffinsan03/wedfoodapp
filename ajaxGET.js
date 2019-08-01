@@ -1,23 +1,30 @@
 
 function loadDoc() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-       //document.getElementById("demo").innerHTML = this.responseText;
-       //console.log(this.responseText);
-       //var google = JSON.stringify(this.responseText);
-         var resp = this.responseText;
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     //document.getElementById("demo").innerHTML = this.responseText;
+     //console.log(this.responseText);
+     //var google = JSON.stringify(this.responseText);
+       var resp = this.responseText;
 
-         console.log(JSON.parse(resp));
-      }
-    };
-    //xhttp.open("GET", "lisa.txt", true);
-    xhttp.open("GET", "http://localhost:8080/api/show", true);
-    
-    xhttp.send();
+       console.log(JSON.parse(resp));
+    }
   };
+  //xhttp.open("GET", "lisa.txt", true);
+  // xhttp.open("GET", "http://localhost:8080/api/show", true);
+  var item_name = encodeURIComponent(items[0]);
+  var item_count = encodeURIComponent(items[1]);
+  var request = "/api/add?mitem=" + item_name + "&count=" + item_count;
+    // xhttp.open("GET", request, true);
+    xhttp.open("GET", "http://localhost:8080/api/show", true);
+    // xhttp.open("GET", "http://localhost:8080/api/add?itemName&itemCount", true);
+    xhttp.send();
 
-  
+  // xhttp.send();
+};
+
+
 
 
 
@@ -27,7 +34,7 @@ function loadDoc() {
 //     var xhttp = new XMLHttpRequest();
 //     xhttp.onreadystatechange = function() {
 //       if (this.readyState == 4 && this.status == 200) {
-     
+   
 //        //document.getElementById("demo").innerHTML = this.responseText;
 //        //console.log(this.responseText);
 //        //var google = JSON.stringify(this.responseText);
@@ -43,6 +50,6 @@ function loadDoc() {
 //     };
 //     //xhttp.open("GET", "lisa.txt", true);
 //     xhttp.open("GET", "https://raw.githubusercontent.com/Ruffinsan0/MyFirstApp/master/README.md", true);
-    
+  
 //     xhttp.send();
 //   };

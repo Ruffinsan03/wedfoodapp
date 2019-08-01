@@ -1,5 +1,5 @@
 {
-  "name": "mysql",
+  "name": "wedfoodapp",
   "version": "1.0.0",
   "description": "npmmysql",
   "main": "ajaxGET.js",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Feevah/Food-App/issues"
   },
-  "homepage": "https://github.com/Feevah/Food-App#readme"
+  "homepage": "https://github.com/Feevah/Food-App#readme",
+  "dependencies": {
+    "mysql": "^2.17.1"
+  }
 }

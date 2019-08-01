@@ -44,7 +44,15 @@ var db = require('./db');
 			// res.end();
 		// 	console.log(JSON.stringify(result));
 		}
-
+		if (/^(\/api\/add)/.test(parUrl.pathname)) {
+			var fItem = parUrl.query.itemName;
+			var fCount = parUrl.query.itemCount;
+			res.writeHead(200, { 'Content-Type': "application/json", "access-control-allow-origin": '*' });
+			db.setItem(fItem,fCount).then( function(result){
+				res.write(result);
+				res.end();
+			}).catch(console.log)
+		}
 	    // else if (parUrl.pathname === ('/ajaxGET.js')){
 	    // fs.readFile("ajaxGET.js", function(err, content){
 	    // 	res.writeHead(200, {'content-Type': "application/javascript"});
