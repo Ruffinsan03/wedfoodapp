@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Feevah/Food-App#readme",
   "dependencies": {
-    "mysql": "^2.17.1"
+    "mysql": "^2.18.0"
   }
 }
